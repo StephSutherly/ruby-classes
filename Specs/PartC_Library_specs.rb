@@ -6,7 +6,7 @@ class TestLibrary  < MiniTest::Test
 
 def setup
 
-  @books = [
+  @my_books = [
       { title: "Clan of the Cave Bears",
         rental_details: {
           student_name: "Reuben",
@@ -36,17 +36,20 @@ def setup
 end
 
   def test_books
-    books = ["Clan of the Cave Bear", "His Dark Materials", "Sapiens", "Harry Potter y la Piedra Filosofal"]
-    library = Library.new(@books)
-    assert_equal(books, library[:title])
+    # books = ["Clan of the Cave Bear", "His Dark Materials", "Sapiens", "Harry Potter y la Piedra Filosofal"]
+    library = Library.new(@my_books)
+    assert_equal(@my_books, library.books)
   end
 
-
+  def test_find_book_by_title
+    library = Library.new(@my_books)
+    assert_equal(library.find_book_by_title("Sapiens"), @mybooks[2])
+  end
 
   # Model a Library as a class.
   #
   # Create a class for a Library that has an array of books. Each book should be a hash with a title, which is a string, and rental details, which is another hash with a student name and due date.////
-  # Create a getter for the books
+  # Create a getter for the books////
   # Create a method that takes in a book title and returns all of the information about that book.
   # Create a method that takes in a book title and returns only the rental details for that book.
   # Create a method that takes in a book title and adds it to our book list (add a new hash for the book with the student name and date being left as empty strings)
