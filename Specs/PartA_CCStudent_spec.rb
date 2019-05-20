@@ -2,7 +2,7 @@ require('minitest/autorun')
 require('minitest/rg')
 require_relative('../PartA_CCStudent.rb')
 
-class TestBankAccount  < MiniTest::Test
+class TestCodeClanStudent  < MiniTest::Test
 
   def test_student_name
     student = CodeClanStudent.new("StephScully", "E31")
