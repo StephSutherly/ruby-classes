@@ -46,13 +46,13 @@ class TestSportsTeam  < MiniTest::Test
 #**Below not quite working
   def test_add_points__win
     team = SportsTeam.new("Greens", ["Jonny","Sam","Charlie"], "Dr Hockey", 0)
-    win = true
+    team.add_points("win")
     assert_equal(1, team.points)
   end
 
   def test_add_points__loss
     team = SportsTeam.new("Greens", ["Jonny","Sam","Charlie"], "Dr Hockey", 0)
-    win = false
+    team.add_points("lose")
     assert_equal(0, team.points)
   end
 

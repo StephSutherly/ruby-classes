@@ -42,11 +42,10 @@ attr_accessor(:coach,:points)
    end
 
 #**
-   def add_points(team, win)
-     if win == true
-       points += 1
+   def add_points(result)
+     if result == "win"
+       @points += 1
      end
-     return points
    end
 
 end
