@@ -4,14 +4,18 @@ require_relative('../PartB_SportsTeam.rb')
 
 class TestSportsTeam  < MiniTest::Test
 
+
+  def setup()
+    players = ["Jonny","Sam","Charlie"]
+    @testteam = SportsTeam.new("Greens", players, "Dr Hockey", 0)
+  end
+
   def test_team_name
-    team = SportsTeam.new("Greens", ["Jonny","Sam","Charlie"], "Dr Hockey", 0)
-    assert_equal("Greens", team.team_name)
+    assert_equal("Greens", @testteam.team_name)
   end
 
   def test_players
-    team = SportsTeam.new("Greens", ["Jonny","Sam","Charlie"], "Dr Hockey", 0)
-    assert_equal(["Jonny","Sam","Charlie"], team.players)
+    assert_equal(["Jonny","Sam","Charlie"], @testteam.players)
   end
 
   def test_coach

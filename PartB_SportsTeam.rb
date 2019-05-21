@@ -41,6 +41,11 @@ attr_accessor(:coach,:points)
      return nil
    end
 
+#another solution for ^^ using .include?
+# def has_player?(players)
+#   return @players.include?(player)
+# end
+
 #**
    def add_points(result)
      if result == "win"
